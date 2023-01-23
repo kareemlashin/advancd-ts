@@ -1,0 +1,63 @@
+enum e {
+    hello = "hello", // error: cannot convert string to e
+    world = "world"  // error 
+};
+e.hello;
+e.world;
+class MyClass {
+    static MyEnum: { Value1; Value2; Value3; }
+    = {
+        Value1: "Value1",
+        Value2: "Value2",
+        Value3: "Value3"
+    };
+}
+enum Status
+{
+    PENDING_SCHEDULING=value,
+    SCHEDULED=value,
+    CANCELLED=value,
+    COMPLETED=value,
+    IN_PROGRESS=value,
+    FAILED=value,
+    POSTPONED=value
+}
+
+export = Status
+enum IEvents {
+        /** A click on a product or product link for one or more products. */
+        CLICK,
+        /** A view of product details. */
+        DETAIL,
+        /** Adding one or more products to a shopping cart. */
+        ADD,
+        /** Remove one or more products from a shopping cart. */
+        REMOVE,
+        /** Initiating the checkout process for one or more products. */
+        CHECKOUT,
+        /** Sending the option value for a given checkout step. */
+        CHECKOUT_OPTION,
+        /** The sale of one or more products. */
+        PURCHASE,
+        /** The refund of one or more products. */
+        REFUND,
+        /** A click on an internal promotion. */
+        PROMO_CLICK
+}
+
+var Events = [
+        'click',
+        'detail',
+        'add',
+        'remove',
+        'checkout',
+        'checkout_option',
+        'purchase',
+        'refund',
+        'promo_click'
+];
+
+function stuff(event: IEvents):boolean {
+        // event can now be only IEvents constants
+        Events[event]; // event is actually a number that matches the index of the array
+}
